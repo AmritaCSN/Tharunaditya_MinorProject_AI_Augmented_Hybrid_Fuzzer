@@ -1,5 +1,17 @@
 # NeuroFuzz: AI-Augmented Hybrid Fuzzer
 
+```text
+    _   __                      ______              
+   / | / /__  __  ___________  / ____/_  __________
+  /  |/ / _ \/ / / / ___/ __ \/ /_  / / / /_  /_  /
+ / /|  /  __/ /_/ / /  / /_/ / __/ / /_/ / / /_/ /_
+/_/ |_/\___/\__,_/_/   \____/_/    \__,_/ /___/___/
+
+  AI-Augmented Hybrid Fuzzer | RL + AFL++ + Symbolic Execution
+  Academic Research Project | M.Tech Cybersecurity Systems and Networks
+ Researcher: Tharunaditya Anuganti | Professor/Guide: Dr. Sriram Sankaran
+```
+
 ![Status](https://img.shields.io/badge/Status-Research_Prototype-blue)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
@@ -60,19 +72,7 @@ I maintain comprehensive documentation for developers and researchers:
 
 NeuroFuzz has been evaluated against baseline AFL++ on complex binaries. The results demonstrate significant improvements in crash discovery and energy efficiency.
 
-### Crash Discovery
-![Crashes](comparison_results_proper/comparison_crashes.png)
-*NeuroFuzz finds crashes significantly faster than baseline AFL++.*
-
-### Efficiency
-![Efficiency](comparison_results_proper/comparison_efficiency.png)
-*NeuroFuzz achieves higher crash density per kilowatt-hour.*
-
-### Coverage
-![Coverage](comparison_results_proper/comparison_coverage.png)
-*Path discovery rate comparison.*
-
-For a detailed analysis, see the [Comparison Report](comparison_results_proper/COMPARISON_REPORT.md).
+For a detailed analysis and visual comparisons, see the [Comparison Report](comparison_results_proper/COMPARISON_REPORT.md).
 
 ---
 
