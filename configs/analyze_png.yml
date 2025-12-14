@@ -1,0 +1,15 @@
+# NeuroFuzz Analysis Configuration
+# Analyzes the binary for functions and potential vulnerabilities
+
+general:
+  mode: "analyze"
+  campaign_name: "analyze_png"
+  log_level: "INFO"
+
+binary:
+  target_path: "binaries/nf_pngdecode_instrumented"
+
+analysis:
+  max_functions: 1000
+  timeout_per_function: 30
+  enable_caching: false  # Force fresh analysis

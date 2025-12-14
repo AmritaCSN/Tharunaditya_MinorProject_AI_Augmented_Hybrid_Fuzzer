@@ -1,0 +1,132 @@
+1. Core Effectiveness Plots (Mandatory)
+
+These plots demonstrate “does your system actually work better?”
+
+1.1 Code Coverage vs Time
+
+Plot: Line graph
+
+X-axis: Time (minutes / CPU-hours)
+
+Y-axis: Code coverage (% edges or basic blocks)
+
+Compare:
+
+Your AI-Hybrid Fuzzer
+
+AFL
+
+Driller
+
+(Optional) BertRLFuzzer
+
+Why reviewers want this:
+Shows faster exploration and better guidance.
+
+1.2 Bugs Found vs Time
+
+Plot: Line graph
+
+X-axis: Time
+
+Y-axis: Unique crashes / vulnerabilities
+
+Why:
+Directly validates vulnerability discovery improvement.
+
+2. Efficiency & Resource Usage Plots (Very Important)
+
+These justify your “resource-aware” and “efficient” claims.
+
+2.1 Bugs per CPU-Hour
+
+Plot: Bar chart
+
+Y-axis: Bugs found per CPU-hour
+
+Why:
+Strong academic metric showing efficiency, not just raw power.
+
+2.2 Symbolic Execution Overhead
+
+Plot: Bar chart or stacked bar
+
+Y-axis:
+
+Time spent in fuzzing
+
+Time spent in symbolic execution
+
+Compare:
+
+Your system vs Driller
+
+Why:
+Proves RL makes smarter symbolic execution decisions.
+
+3. RL Agent Validation Plots (Key Novelty Proof)
+
+These plots justify the AI component, which examiners scrutinize heavily.
+
+3.1 RL Reward vs Training Episodes
+
+Plot: Line graph
+
+X-axis: Training episodes
+
+Y-axis: Cumulative reward
+
+Why:
+Shows the agent actually learns.
+
+3.2 Action Distribution of RL Agent
+
+Plot: Bar chart or stacked area plot
+
+Actions:
+
+Fuzz
+
+Symbolic execution
+
+Input generation
+
+Why:
+Demonstrates adaptive decision-making instead of fixed heuristics.
+
+4. Priority & Semantic Scoring Validation (Your Unique Contribution)
+
+These plots prove semantic vulnerability prioritization works.
+
+4.1 Vulnerability Score vs Bugs Found
+
+Plot: Scatter plot
+
+X-axis: Semantic vulnerability score
+
+Y-axis: Bugs discovered from that region
+
+Why:
+Shows prioritization is meaningful, not random.
+
+4.2 Priority Queue Effectiveness
+
+Plot: Bar or line chart
+
+Metric:
+
+Bugs found from top-K priority seeds vs random seeds
+
+Why:
+Direct validation of your priority-based feedback loop.
+
+
+7. Statistical Rigor (Strongly Recommended)
+7.1 Variance / Stability Plot
+
+Plot: Box plot or error-bar plot
+
+Metric: Bugs found across multiple runs
+
+Why:
+Reviewers expect repeatability and robustness.

@@ -1,0 +1,146 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# NeuroFuzz Data (generated during runtime)
+data/*
+!data/inputs/
+!data/outputs/
+!data/campaigns/
+!data/models/
+!data/cache/
+!data/logs/
+data/inputs/*
+data/outputs/*
+data/campaigns/*
+data/models/*
+data/cache/*
+data/logs/*
+!data/inputs/.gitkeep
+!data/outputs/.gitkeep
+!data/campaigns/.gitkeep
+!data/models/.gitkeep
+!data/cache/.gitkeep
+!data/logs/.gitkeep
+
+# Generated Results
+comparison_results_proper/
+comparison_results/
+neurofuzz.log
+neurofuzz.egg-info/
+
+
+# AFL++ specific
+.cur_input
+fuzzer_stats
+plot_data
+cmdline
+fuzz_bitmap
+fuzzer_setup
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.pid
+afl_pid.txt
+campaign_log.txt
+efficiency_report.json
+
+# Compiled binaries (keep source)
+binaries/*
+!binaries/*.c
+!binaries/examples/
+binaries/examples/*.o
+binaries/examples/test_vuln
+binaries/examples/vulnerable_target
+
+# Model files (large)
+*.zip
+*.pth
+*.pkl
+*.h5
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Testing
+.pytest_cache/
+.tox/
+
+# Documentation build
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# TensorBoard logs
+logs/tensorboard/
+events.out.tfevents.*
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Large data files
+*.tar.gz
+*.zip
+*.7z
+*.rar
+
+
+.github
+driller 

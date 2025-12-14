@@ -1,0 +1,32 @@
+general:
+  mode: "train"
+  campaign_name: "demo_campaign"
+  log_level: "INFO"
+
+binary:
+  target_path: "binaries/nf_demo_instrumented"
+
+analysis:
+  max_functions: 100
+  timeout_per_function: 30
+
+afl:
+  input_dir: "data/inputs_demo"
+  output_dir: "data/outputs_demo"
+  timeout_ms: 1000
+  force_clean: true
+
+symbolic_execution:
+  enable: true
+  timeout_seconds: 60
+  soft_timeout_seconds: 30
+  max_depth: 50
+  max_states: 100
+
+reinforcement_learning:
+  training:
+    time_limit_minutes: 10
+    learning_rate: 0.0003
+  campaign:
+    max_steps: 1000
+  model_path: "data/models/neurofuzz_demo.zip"

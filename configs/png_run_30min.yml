@@ -1,0 +1,32 @@
+general:
+  mode: "run"
+  campaign_name: "png_run_30min"
+  log_level: "INFO"
+
+binary:
+  target_path: "binaries/nf_pngdecode_instrumented"
+
+analysis:
+  max_functions: 100
+  timeout_per_function: 30
+
+afl:
+  input_dir: "data/inputs_nf_pngdecode"
+  output_dir: "data/outputs"
+  timeout_ms: 1000
+  force_clean: true
+
+symbolic_execution:
+  enable: true
+  max_states: 100
+  max_depth: 50
+  timeout_seconds: 300
+
+reinforcement_learning:
+  training:
+    time_limit_minutes: 30
+    learning_rate: 0.0003
+  campaign:
+    max_steps: 1800
+    time_limit_minutes: 60
+  model_path: "data/models/neurofuzz_png_30min.zip"

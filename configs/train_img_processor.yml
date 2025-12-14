@@ -1,0 +1,27 @@
+general:
+  mode: "train"
+  campaign_name: "img_training_30min"
+  log_level: "INFO"
+
+binary:
+  target_path: "binaries/nf_img_processor_instrumented"
+
+analysis:
+  max_functions: 100
+  timeout_per_function: 40
+
+afl:
+  input_dir: "data/inputs_img"
+  output_dir: "data/outputs_train"
+  timeout_ms: 1000
+  force_clean: true
+
+symbolic_execution:
+  enable: true
+  timeout_seconds: 300
+
+reinforcement_learning:
+  training:
+    time_limit_minutes: 30
+    learning_rate: 0.0003
+  model_path: "data/models/neurofuzz_img_30min.zip"

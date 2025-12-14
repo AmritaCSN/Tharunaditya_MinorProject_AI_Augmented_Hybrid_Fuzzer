@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neurofuzz"
+version = "0.1.0"
+description = "AI-Augmented Hybrid Fuzzer using RL and Symbolic Execution"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "NeuroFuzz Team"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Security",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "stable-baselines3>=2.0.0",
+    "gymnasium>=0.28.1",
+    "angr>=9.2",
+    "claripy>=9.2",
+    "psutil>=5.9.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "numpy>=1.24.0",
+    "pyyaml>=6.0",
+    "pydantic>=2.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.0.0",
+    "mypy>=1.0.0"
+]
+
+[project.scripts]
+neurofuzz = "neurofuzz:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+pythonpath = [
+    ".",
+    "src"
+]

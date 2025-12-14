@@ -1,0 +1,38 @@
+# NeuroFuzz Run Configuration (10 minutes)
+# Short validation run using trained model
+
+general:
+  mode: "run"
+  campaign_name: "run_10min"
+  log_level: "INFO"
+
+binary:
+  target_path: "binaries/cgc_cadet_00001_instrumented"
+
+analysis:
+  max_functions: 100
+  timeout_per_function: 30
+  enable_caching: true
+  cache_dir: "data/cache"
+
+afl:
+  input_dir: "data/inputs_cgc_cadet_00001"
+  output_dir: "data/outputs"
+  timeout_ms: 1000
+  memory_limit_mb: 512
+  dictionary: null
+  force_clean: true
+
+symbolic_execution:
+  enable: true
+  soft_timeout_seconds: 300
+  max_states: 100
+  max_depth: 50
+  auto_detect_clean_binary: true
+
+reinforcement_learning:
+  campaign:
+    max_steps: 200  # Sufficient for 10 mins
+    time_limit_minutes: 10
+  
+  model_path: "data/models/neurofuzz_trained_10min.zip"

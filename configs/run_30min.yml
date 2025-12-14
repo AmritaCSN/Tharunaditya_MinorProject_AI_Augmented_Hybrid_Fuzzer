@@ -1,0 +1,51 @@
+# NeuroFuzz Run Configuration (30 minutes)
+# Uses an existing trained PPO model to run a 30-minute fuzzing campaign
+
+general:
+  mode: "run"
+  campaign_name: "run_30min"
+  log_level: "INFO"
+
+binary:
+  target_path: "binaries/cgc_cadet_00001_instrumented"
+
+analysis:
+  max_functions: 100
+  timeout_per_function: 30
+  enable_caching: true
+  cache_dir: "data/cache"
+
+afl:
+  input_dir: "data/inputs_cgc_cadet_00001"
+  output_dir: "data/outputs"
+  timeout_ms: 1000
+  memory_limit_mb: 512
+  dictionary: null
+  force_clean: true
+
+symbolic_execution:
+  enable: true
+  soft_timeout_seconds: 300
+  max_states: 100
+  max_depth: 50
+  auto_detect_clean_binary: true
+
+reinforcement_learning:
+  # Must point to an existing trained model produced by training config
+  model_path: "data/models/neurofuzz_30min.zip"
+
+  # Run-mode control: campaign ends when time_limit_minutes is reached
+  campaign:
+    time_limit_minutes: 30
+    max_steps: 1000000
+
+resources:
+  enable_monitoring: true
+  cpu_limit_percent: 90
+  memory_limit_percent: 85
+  check_interval_seconds: 30
+
+evaluation:
+  enable_detailed_logging: true
+  checkpoint_interval_minutes: 10
+  save_intermediate_models: false

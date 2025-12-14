@@ -1,0 +1,72 @@
+# NeuroFuzz Training Configuration (5 minutes)
+# Quick test configuration
+
+general:
+  mode: "train"
+  campaign_name: "train_5min"
+  log_level: "INFO"
+
+binary:
+  target_path: "binaries/cgc_cadet_00001_instrumented"
+
+analysis:
+  max_functions: 100
+  timeout_per_function: 30
+  enable_caching: true
+  cache_dir: "data/cache"
+
+afl:
+  input_dir: "data/inputs_cgc_cadet_00001"
+  output_dir: "data/outputs"
+  timeout_ms: 1000
+  memory_limit_mb: 512
+  dictionary: null
+  force_clean: true
+
+symbolic_execution:
+  enable: true
+  soft_timeout_seconds: 120
+  max_states: 100
+  max_depth: 50
+  auto_detect_clean_binary: true
+
+reinforcement_learning:
+  training:
+    time_limit_minutes: 5
+    total_timesteps: 1000000
+    learning_rate: 0.0003
+    n_steps: 2048
+    batch_size: 64
+    n_epochs: 10
+    gamma: 0.99
+    gae_lambda: 0.95
+    clip_range: 0.2
+    ent_coef: 0.3
+    vf_coef: 0.5
+    max_grad_norm: 0.5
+    use_sde: false
+    sde_sample_freq: -1
+  
+  observation_normalization:
+    enable: true
+    norm_obs: true
+    norm_reward: false
+    clip_obs: 10.0
+    clip_reward: 10.0
+    gamma: 0.99
+    epsilon: 1.0e-8
+  
+  model_save_path: "data/models/neurofuzz_5min.zip"
+  save_vecnormalize: true
+  vecnormalize_path: "data/models/neurofuzz_5min_vecnormalize.pkl"
+
+resources:
+  enable_monitoring: true
+  cpu_limit_percent: 90
+  memory_limit_percent: 85
+  check_interval_seconds: 30
+
+evaluation:
+  enable_detailed_logging: true
+  checkpoint_interval_minutes: 2
+  save_intermediate_models: false

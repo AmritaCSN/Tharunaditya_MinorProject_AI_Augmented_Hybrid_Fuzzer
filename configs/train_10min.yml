@@ -1,0 +1,56 @@
+# NeuroFuzz Training Configuration (10 minutes)
+# Short test run for validation
+
+general:
+  mode: "train"
+  campaign_name: "train_10min"
+  log_level: "INFO"
+
+binary:
+  target_path: "binaries/cgc_cadet_00001_instrumented"
+
+analysis:
+  max_functions: 100
+  timeout_per_function: 30
+  enable_caching: true
+  cache_dir: "data/cache"
+
+afl:
+  input_dir: "data/inputs_cgc_cadet_00001"
+  output_dir: "data/outputs"
+  timeout_ms: 1000
+  memory_limit_mb: 512
+  dictionary: null
+  force_clean: true
+
+symbolic_execution:
+  enable: true
+  soft_timeout_seconds: 300
+  max_states: 100
+  max_depth: 50
+  auto_detect_clean_binary: true
+
+reinforcement_learning:
+  training:
+    time_limit_minutes: 10
+    total_timesteps: 500000
+    learning_rate: 0.0003
+    n_steps: 2048
+    batch_size: 64
+    n_epochs: 10
+    gamma: 0.99
+    gae_lambda: 0.95
+    clip_range: 0.2
+    ent_coef: 0.3
+    vf_coef: 0.5
+    max_grad_norm: 0.5
+    use_sde: false
+    sde_sample_freq: -1
+  
+  observation_normalization:
+    norm_obs: true
+    norm_reward: false
+    clip_obs: 10.0
+    clip_reward: 10.0
+  
+  model_path: "data/models/neurofuzz_trained_10min.zip"
