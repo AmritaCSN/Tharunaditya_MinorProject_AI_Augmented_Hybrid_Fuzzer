@@ -56,7 +56,27 @@ We maintain comprehensive documentation for developers and researchers:
 
 ---
 
-## 🛠️ Installation
+## � Results
+
+NeuroFuzz has been evaluated against baseline AFL++ on complex binaries. The results demonstrate significant improvements in crash discovery and energy efficiency.
+
+### Crash Discovery
+![Crashes](comparison_results_proper/comparison_crashes.png)
+*NeuroFuzz finds crashes significantly faster than baseline AFL++.*
+
+### Efficiency
+![Efficiency](comparison_results_proper/comparison_efficiency.png)
+*NeuroFuzz achieves higher crash density per kilowatt-hour.*
+
+### Coverage
+![Coverage](comparison_results_proper/comparison_coverage.png)
+*Path discovery rate comparison.*
+
+For a detailed analysis, see the [Comparison Report](comparison_results_proper/COMPARISON_REPORT.md).
+
+---
+
+## �🛠️ Installation
 
 ### Prerequisites
 - **OS**: Linux (Ubuntu 22.04+ recommended) or WSL2.
