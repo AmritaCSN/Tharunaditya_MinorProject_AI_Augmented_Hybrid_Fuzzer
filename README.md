@@ -15,7 +15,7 @@ Unlike traditional hybrid fuzzers that use static heuristics (e.g., "switch afte
 
 ## 📚 Documentation
 
-We maintain comprehensive documentation for developers and researchers:
+I maintain comprehensive documentation for developers and researchers:
 
 ### High-Level Guides
 - **[Architecture Overview](docs/ARCHITECTURE.md)**: System design and data flow.
