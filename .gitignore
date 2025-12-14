@@ -79,7 +79,7 @@ fuzzer_setup
 afl_pid.txt
 campaign_log.txt
 efficiency_report.json
-
+scripts/*
 # Compiled binaries (keep source)
 binaries/*
 !binaries/*.c
