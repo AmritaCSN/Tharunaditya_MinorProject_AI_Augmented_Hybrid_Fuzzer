@@ -1,6 +1,4 @@
-# NAI-Augmented Efficient, Priority-Based 
-Hybrid Fuzzer for Vulnerability 
-Discovery
+# AI-Augmented Efficient, Priority-Based Hybrid Fuzzer for Vulnerability Discovery
 
 ```text
     _   __                      ______              
