@@ -149,3 +149,4 @@ run_baseline_afl.sh
 run_baseline_cgc.sh
 debug_plot_data.py
 driller/
+Recommended_plots.md
